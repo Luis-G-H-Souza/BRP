@@ -1,6 +1,11 @@
 *{
     margin: 0;
-    color: white;
+
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 body,html{
@@ -15,21 +20,16 @@ header{
     justify-content: center;
     align-items: center;
     border: 1px solid;
-
     height: 70px;
-    
 }
 div#main{
-
-
     display: grid;
-   grid-template-columns: 1fr 456px 1fr;
-   grid-template-rows: 0.1fr 456px 0.1fr;
-   margin-top: 50px;
-   box-sizing: border-box
+    grid-template-columns: 1fr 456px 1fr;
+    grid-template-rows: 0.1fr 456px 0.1fr;
+    margin-top: 50px;
+    box-sizing: border-box
 
 }
-
 div#box{
     margin-bottom: 100px;
     width: 450px;
@@ -74,69 +74,48 @@ button{
     border-bottom-left-radius: 5px;
     background-color: rgb(225, 225, 225);
     font-size: 25px;
-    
 }
 
-div#br{
+#br{
     background-image: linear-gradient(180deg, #ffff0b 0, #ffff00 10%, #edff00 20%, #cdff00 30%, #aaff00 40%, #7fff00 50%, #41fb22 60%, #00f839 70%, #00f44e 80%, #00f063 90%, #00ed79 100%);
-    border-radius: 0% 0% 0% 0%;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    color: black;
     width: 450px;
     height: 450px;
-
-}
-
-
-.limitbtr{
-    grid-row: 3;
-    grid-column: 1;
     display: flex;
-    justify-content: end;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
-#btr{
-    width: 40px;
-    height: 25px;
-    background-color: rgb(46, 45, 45);
-    color: white;
-    font-size: 20px;
-}
-
 .limitbtl{
     grid-row: 1;
     grid-column: 1;
     display: flex;
     justify-content: end;
 }
-#btl{
-    width: 40px;
-    height: 25px;
-    background-color: rgb(46, 45, 45);
-    color: white;
-    font-size: 20px;
+.limitbtr{
+    grid-row: 1;
+    grid-column: 3;
+    display: flex;
+    justify-content:baseline;
 }
 
 .limitbbl{
     grid-row: 3;
-    grid-column: 3;
-    
+    grid-column: 1;
+    display: flex;
+    justify-content: end;
 }
-#bbl{
-    width: 40px;
-    height: 25px;
-    background-color: rgb(46, 45, 45);
-    color: white;
-    font-size: 20px;
-}
-
-
 .limitbbr{
-    grid-row: 1;
+    grid-row: 3;
     grid-column: 3;
-
 }
-#bbr{
+.in{
     width: 40px;
     height: 25px;
     background-color: rgb(46, 45, 45);
-    color: white;
     font-size: 20px;
 }

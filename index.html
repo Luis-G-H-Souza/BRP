@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Border Radius Previewer</title>
     <link rel="stylesheet" href="styleshet.css">
-    <link rel="js" href="script.js">
+
 </head>
 <body>
     <header>
@@ -13,10 +13,10 @@
     </header>
     <div id="main" class="container">
         
-        <div class="limitbtr"><input value="0" type="text" name="btr" id="btr"></div>
-        <div class="limitbbl"><input value="0" type="text" name="bbl" id="bbl"></div>
-        <div class="limitbbr"><input value="0" type="text" name="bbr" id="bbr"></div>
-        <div class="limitbtl"><input value="0" type="text" name="btl" id="btl"></div>
+        <div class="limitbtr"><input value="" type="number" name="btr" id="btr" class="in" oninput="pegabtr()"></div>
+        <div class="limitbbl"><input value="" type="number" name="bbl" id="bbl" class="in" oninput="pegabbl()"></div>
+        <div class="limitbbr"><input value="" type="number" name="bbr" id="bbr" class="in" oninput="pegabbr()"></div>
+        <div class="limitbtl"><input value="" type="number" name="btl" id="btl" class="in" oninput="pegabtl()"></div>
         
         <div id="box">
             <div id="br"></div>
@@ -27,6 +27,6 @@
             <button>COPY</button>
         </div>
     </div>
-    
+    <script src="script.js"></script>
 </body>
 </html>
