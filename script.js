@@ -1,114 +1,106 @@
 
 
 var px = "px"
+
+//funçao para criar o esqueleto de uma div generica
+function criaDiv(id, text){
+    var div = document.createElement("div");
+    div.id = id;
+    var p = document.createElement("p");
+    var t = document.createTextNode(text);
+    p.appendChild(t);
+    div.appendChild(p);
+
+    return div;
+
+}
+ 
+//funçao para atualizar o border radius de acordo com os valores passados nos inputs
+function AtualizaBR(br, name, value){
+    var val = value + px;
+    br.style[name] = val;
+    var t = name + " :" + val;
+    var id = name;
+    var div = document.getElementById(id);
+    criatext(div, t, br, id)
+    
+}
+
+//funçao para criar o texto com o comando do border radius de acordo com os valores dos inputs
+function criatext(div, t, br, id){
+    if(div){    
+       div.querySelector("p").textContent = t; 
+            }
+    else{
+        div = criaDiv(id, t);
+        br.appendChild(div);  
+        } 
+    }
+
+function mudabar(){
+        vbtl = pegabtl();
+        vbtr = pegabtr();
+        vbbl = pegabbl();
+        vbbr = pegabbr();
+        var b = document.getElementById("bar");
+        b.value = vbtl + px + " " + vbtr + px + " " + vbbl + px + " " + vbbr + px + " ";
+    }
+
+//funcoes para pegar o valor de cada input
 function pegabtl(){
     //Manipulaçao do border radius
     var btl = document.getElementById("btl").value;
     var br = document.getElementById("br");
-    br.style.borderTopLeftRadius = btl + px;
+    var name = "borderTopLeftRadius";
+    AtualizaBR(br, name, btl);
 
-    //manipulaçao da div
-    var t = document.createTextNode("border-top-left-radius:" + btl + px);
-    var div = document.getElementById("textbtl");
-    if(div){
-        div.removeChild(div.firstChild);
-        var p = document.createElement("p")
-        div.appendChild(p);
-        p.appendChild(t);
-        br.appendChild(div);
-    }
-    else{
-        var div = document.createElement("div");
-        div.id = "textbtl"
-        var p = document.createElement("p")
-        div.appendChild(p);
-        p.appendChild(t);
-        br.appendChild(div);
-        }
+    return btl;
 }
+
 function pegabtr(){
+    //Manipulaçao do border radius
     var btr = document.getElementById("btr").value;
     var br = document.getElementById("br");
-    br.style.borderTopRightRadius = btr + px;
-    //manipulaçao da div
-    var t = document.createTextNode("border-top-right-radius:" + btr + px);
-    var div = document.getElementById("textbtr");
-    if(div){
-        div.removeChild(div.firstChild);
-        var p = document.createElement("p")
-        div.appendChild(p);
-        p.appendChild(t);
-        br.appendChild(div);
-    }
-    else{
-        var div = document.createElement("div");
-        div.id = "textbtr"
-        var p = document.createElement("p")
-        div.appendChild(p);
-        p.appendChild(t);
-        br.appendChild(div);
-        }
+    var name1 = "borderTopRightRadius";
+    AtualizaBR(br, name1, btr);
+
+    return btr;
 }
 function pegabbl(){
+    //Manipulaçao do border radius
     var bbl = document.getElementById("bbl").value;
     var br = document.getElementById("br");
-    br.style.borderBottomLeftRadius = bbl + px;
-    //manipulaçao da div
-    var t = document.createTextNode("border-bottom-left-radius:" + bbl + px);
-    var div = document.getElementById("textbbl");
-    if(div){
-        div.removeChild(div.firstChild);
-        var p = document.createElement("p")
-        div.appendChild(p);
-        p.appendChild(t);
-        br.appendChild(div);
-    }
-    else{
-        var div = document.createElement("div");
-        div.id = "textbbl"
-        var p = document.createElement("p")
-        div.appendChild(p);
-        p.appendChild(t);
-        br.appendChild(div);
-        }
+    var name2 = "borderBottomLeftRadius";
+    AtualizaBR(br, name2, bbl);
+
+    return bbl;
 }
 function pegabbr(){
+    //Manipulaçao do border radius
     var bbr = document.getElementById("bbr").value;
     var br = document.getElementById("br");
-    br.style.borderBottomRightRadius = bbr + px;
-    //manipulaçao da div
-    var t = document.createTextNode("border-bottom-right-radius:" + bbr + px);
-    var div = document.getElementById("textbbr");
-    if(div){
-        div.removeChild(div.firstChild);
-        var p = document.createElement("p")
-        div.appendChild(p);
-        p.appendChild(t);
-        br.appendChild(div);
-    }
-    else{
-        var div = document.createElement("div");
-        div.id = "textbbr"
-        var p = document.createElement("p")
-        div.appendChild(p);
-        p.appendChild(t);
-        br.appendChild(div);
-        }
+    var name3 = "borderBottomRightRadius";
+    AtualizaBR(br, name3, bbr);
+
+    return bbr;
 }
 
+
+
+    
    
+
 function copy() {
-    // Get the text field
-    var copyText = document.getElementById("bar");
+   var b = document.getElementById("bar");
+     navigator.clipboard.writeText("border-radius: " + b.value +";");
   
-    // Select the text field
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); // For mobile devices
+//     // Alert the copied text
+alert("Copied the text");
+        
+//    })
   
-     // Copy the text inside the text field
-    navigator.clipboard.writeText(copyText.value);
-  
-    // Alert the copied text
-    alert("Copied the text: " + copyText.value);
+//     // Select the text field
+
+ 
   }
 

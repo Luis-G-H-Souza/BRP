@@ -13,18 +13,18 @@
     </header>
     <div id="main" class="container">
         
-        <div class="limitbtr"><input value="" type="number" name="btr" id="btr" class="in" oninput="pegabtr()"></div>
-        <div class="limitbbl"><input value="" type="number" name="bbl" id="bbl" class="in" oninput="pegabbl()"></div>
-        <div class="limitbbr"><input value="" type="number" name="bbr" id="bbr" class="in" oninput="pegabbr()"></div>
-        <div class="limitbtl"><input value="" type="number" name="btl" id="btl" class="in" oninput="pegabtl()"></div>
+        <div class="limitbtr"><input value="0" type="number" name="btr" id="btr" class="in" oninput="pegabtr(), mudabar()"></div>
+        <div class="limitbbl"><input value="0" type="number" name="bbl" id="bbl" class="in" oninput="pegabbl(), mudabar()"></div>
+        <div class="limitbbr"><input value="0" type="number" name="bbr" id="bbr" class="in" oninput="pegabbr(), mudabar()"></div>
+        <div class="limitbtl"><input value="0" type="number" name="btl" id="btl" class="in" oninput="pegabtl(), mudabar()"></div>
         
         <div id="box">
             <div id="br"></div>
         </div>
 
         <div id="copy">
-            <input type="text" name="" id="bar">
-            <button>COPY</button>
+            <input type="text" value="0px 0px 0px 0px" name="" id="bar" readonly>    
+            <button onclick="copy()">COPY</button>
         </div>
     </div>
     <script src="script.js"></script>

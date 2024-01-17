@@ -21,6 +21,7 @@ header{
     align-items: center;
     border: 1px solid;
     height: 70px;
+    color: white;
 }
 div#main{
     display: grid;
@@ -34,7 +35,7 @@ div#box{
     margin-bottom: 100px;
     width: 450px;
     height: 450px;
-    border: 3px solid gray;
+    border: 3px solid white;
     border-style: dashed;
     display: flex;
     justify-content: center;
@@ -73,7 +74,8 @@ button{
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     background-color: rgb(225, 225, 225);
-    font-size: 25px;
+    font-size: 20px;
+    text-align: center;
 }
 
 #br{
